@@ -1,0 +1,110 @@
+<html>
+    <head>
+        
+        <title>Form</title>
+        <link rel = "stylesheet" href = "styleform.css"/>
+        <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+                            
+               
+                 
+            function validateForm()
+            {
+                let x = document.forms["myForm"]["fname"].value;
+                let y = document.forms["myForm"]["email"].value;
+
+                     if(x.match(/[0-9]/g))
+                    { 
+                        alert("First name should not have numbers ");
+                        return false;
+                       
+                    }
+                    else if(/[^a-zA-Z]/.test(x))
+                    {
+                        alert("Special characters are not allowed!");
+                        return false;
+                    }
+                   else
+                    {
+                        
+                            if(y.match(/@/g))
+                            {
+                                return true;
+                            
+                            }
+                            else{
+                                alert("@ missing!");
+                                return false;
+                            }
+                        }
+                }    
+        </script>
+        
+    </head>
+    <body class = "image">
+<div name = "outer">
+        <h1 name ="main"><u>Let us know About Yourselves!</u></h1>
+    <div name = "inner">
+        <form name= "myForm" action="action.html" onsubmit="return validateForm()" target = "_blank">
+       
+       
+        <label>First Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </label> 
+        <input type = "text" name = "fname" id = "firstname" placeholder="  First name"><br>  
+        <label>Last Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </label>
+        <input type="text"  name = "lname" placeholder="  Last name " ><br>
+        <label >Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+        <input type = "text" name = "email" placeholder="  xyz123@domain ..."><br>
+        <label name = "gender">Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </label>
+        <input type = "radio">
+        <label class = "male">Male</label>
+        <input type = "radio">
+        <label class = "male">Female</label><br>
+        <label >Date of Birth&nbsp;&nbsp;&nbsp;:</label>
+        <input type="date" class = "dob"><br>
+        <label name = "state">Native Place &nbsp;&nbsp;&nbsp;   :</label>
+        <select name = "dropbox">
+            <option value = "none" selected disabled hidden>
+            Select your State
+            </option>
+            <option>
+                Tamil Nadu
+            </option>
+            <option>
+                Andhra Pradesh
+            </option>
+            <option>
+                Karnataka
+            </option>
+            <option>
+                Kerala
+            </option>
+        </select><br>
+        <label>Photo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+        <input type = "file">
+        <label class = "hobby">Hobbies : </label><br>
+        <br>
+        <input type="checkbox">
+        
+        <label>Photography</label><br>
+       
+        <input type="checkbox">
+        <label>Listening Music</label><br>
+        
+        <input type="checkbox">
+        
+        <label>Drawing</label><br>
+       
+        <input type="checkbox">
+        <label>Watching TV</label><br>
+        <br>
+        <input type = "submit" class = "submit"  ></input>
+        <br>
+       
+       
+                 
+        </form>
+    </div>
+</div>
+
+
+
